@@ -71,6 +71,7 @@ const displayProducts = async (req, res) => {
     const skip = (page - 1) * limit;
     const count = await productModel.countDocuments();
     const total = Math.ceil(count/limit);
+    // hh
     const products = await productModel.find().skip(skip).limit(limit);
     res.status(200).json({products, total});
   } catch (err) {
